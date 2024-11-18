@@ -8,6 +8,7 @@ plugins {
 }
 
 android {
+    group = "com.mishbanya"
     namespace = "com.mishbanya.effectivemobiletest2data"
     compileSdk = 34
 
