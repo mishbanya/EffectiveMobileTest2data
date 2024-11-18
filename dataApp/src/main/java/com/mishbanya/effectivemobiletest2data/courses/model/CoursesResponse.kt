@@ -7,5 +7,8 @@ data class CoursesResponse(
     val meta: Meta,
 
     @SerializedName("courses")
-    val courses: List<CourseModel>
+    val courses: List<CourseModel>,
+
+    @SerializedName("enrollments")
+    val enrollments: List<Any>
 )

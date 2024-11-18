@@ -1,6 +1,7 @@
 package com.mishbanya.effectivemobiletest2data.common.module
 
 import android.util.Log
+import com.google.gson.Gson
 import com.mishbanya.effectivemobiletest2data.BuildConfig
 import dagger.Module
 import dagger.Provides
@@ -16,12 +17,14 @@ import javax.inject.Singleton
 object RetrofitModule {
     @Provides
     @Singleton
-    fun provideRetrofitClient(): Retrofit {
+    fun provideRetrofitClient(
+        gson: Gson
+    ): Retrofit {
         Log.d("Hilt", "Creating Retrofit client instance")
         return Retrofit.Builder()
             .baseUrl(BuildConfig.BASE_URL)
             .addCallAdapterFactory(RxJava3CallAdapterFactory.create())
-            .addConverterFactory(GsonConverterFactory.create())
+            .addConverterFactory(GsonConverterFactory.create(gson))
             .build()
     }
 }
