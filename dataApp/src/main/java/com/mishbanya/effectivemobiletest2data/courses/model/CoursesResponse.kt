@@ -1,6 +1,7 @@
 package com.mishbanya.effectivemobiletest2data.courses.model
 
 import com.google.gson.annotations.SerializedName
+import kotlin.collections.List
 
 data class CoursesResponse(
     @SerializedName("meta")
