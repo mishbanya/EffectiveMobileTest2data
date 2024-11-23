@@ -22,7 +22,7 @@ object RetrofitModule {
     ): Retrofit {
         Log.d("Hilt", "Creating Retrofit client instance")
         return Retrofit.Builder()
-            .baseUrl(BuildConfig.BASE_URL)
+            .baseUrl("https://stepik.org:443/api/")
             .addCallAdapterFactory(RxJava3CallAdapterFactory.create())
             .addConverterFactory(GsonConverterFactory.create(gson))
             .build()
